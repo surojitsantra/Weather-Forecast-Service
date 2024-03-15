@@ -1,4 +1,4 @@
-# ze-rabbit-consumer
+# Weather-Forecast-Service
 
 A Weather Forecast Service provides predictive information about current temperature and high/low temperature extended forecast. The service is based on the TomorrowIo API.
 
