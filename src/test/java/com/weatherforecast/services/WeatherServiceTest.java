@@ -26,14 +26,16 @@ public class WeatherServiceTest {
     public void testGetWeatherInfo() {
         // Arrange
         String zipcode = "12345";
-        WeatherInfo WeatherInfo = new WeatherInfo(10, 20, 5);
-        when(weatherAdapter.getWeatherInfo(zipcode)).thenReturn(WeatherInfo);
+        WeatherInfo mockedWeatherInfo = new WeatherInfo(10, 20, 5);
+        when(weatherAdapter.getWeatherInfo(zipcode)).thenReturn(mockedWeatherInfo);
+
         // Act
         WeatherInfo weatherInfo = weatherService.getWeatherInfo(zipcode);
+
         // Assert
-        assertEquals(weatherInfo.getCurrentTemperature(), weatherInfo.getCurrentTemperature());
-        assertEquals(weatherInfo.getLowTemperature(), weatherInfo.getLowTemperature());
-        assertEquals(weatherInfo.getHighTemperature(), weatherInfo.getHighTemperature());
+        assertEquals(mockedWeatherInfo.getCurrentTemperature(), weatherInfo.getCurrentTemperature());
+        assertEquals(mockedWeatherInfo.getLowTemperature(), weatherInfo.getLowTemperature());
+        assertEquals(mockedWeatherInfo.getHighTemperature(), weatherInfo.getHighTemperature());
     }
 
 }

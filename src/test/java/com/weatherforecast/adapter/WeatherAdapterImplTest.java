@@ -41,8 +41,8 @@ public class WeatherAdapterImplTest {
         WeatherInfo weatherInfo = weatherAdapterImpl.getWeatherInfo(zipcode);
 
         // Assert
-        assertEquals(weatherInfo.getCurrentTemperature(), weatherInfo.getCurrentTemperature());
-        assertEquals(weatherInfo.getLowTemperature(), weatherInfo.getLowTemperature());
-        assertEquals(weatherInfo.getHighTemperature(), weatherInfo.getHighTemperature());
+        assertEquals(weatherClientData.getData().getValues().getTemperature(), weatherInfo.getCurrentTemperature());
+        assertEquals(weatherClientData.getData().getValues().getTemperatureApparent(), weatherInfo.getHighTemperature());
+        assertEquals(weatherClientData.getData().getValues().getDewPoint(), weatherInfo.getLowTemperature());
     }
 }
